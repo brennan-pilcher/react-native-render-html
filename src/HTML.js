@@ -48,7 +48,8 @@ export default class HTML extends PureComponent {
         baseFontStyle: PropTypes.object.isRequired,
         textSelectable: PropTypes.bool,
         renderersProps: PropTypes.object,
-        allowFontScaling: PropTypes.bool
+        allowFontScaling: PropTypes.bool,
+        textBreakStrategy: PropTypes.string
     }
 
     static defaultProps = {
@@ -65,7 +66,8 @@ export default class HTML extends PureComponent {
         tagsStyles: {},
         classesStyles: {},
         textSelectable: false,
-        allowFontScaling: true
+        allowFontScaling: true,
+        textBreakStrategy: 'highQuality'
     }
 
     constructor (props) {
@@ -404,7 +406,8 @@ export default class HTML extends PureComponent {
             ignoredStyles,
             ptSize,
             tagsStyles,
-            textSelectable
+            textSelectable,
+            textBreakStrategy
         } = props;
 
         return RNElements && RNElements.length ? RNElements.map((element, index) => {
@@ -467,6 +470,7 @@ export default class HTML extends PureComponent {
                           ignoredStyles,
                           allowedStyles
                       })}
+                  textBreakStrategy={textBreakStrategy}
                 >
                     { data }
                 </Text> :

@@ -98,6 +98,7 @@ Prop | Description | Type | Required/Default
 `ignoredStyles` | CSS styles from the `style` attribute you don't want rendered, see [ignoring HTML content](#ignoring-html-content) | `array` | Optional
 `ignoreNodesFunction` | Return true in this custom function to ignore nodes very precisely, see [ignoring HTML content](#ignoring-html-content) | `function` | Optional
 `debug` | Prints the parsing result from htmlparser2 and render-html after the initial render | `bool` | Optional, defaults to `false`
+`textBreakStrategy` | Set the [textBreakStrategy](https://facebook.github.io/react-native/docs/text#textbreakstrategy) of the underlying React Native Text components | `string` | Optional, defaults to `highQuality`. Android only.
 
 ## Demo
 
